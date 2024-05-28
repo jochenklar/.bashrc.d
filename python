@@ -28,3 +28,8 @@ function serve {
         python3 -m http.server $1
     fi
 }
+
+function clean-python {
+    find . -type f -name *.pyc -delete
+    find . -type d -name __pycache__ -delete
+}

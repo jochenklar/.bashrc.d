@@ -1,0 +1,12 @@
+function fix-permissions {
+    find . -type d -exec chmod 755 {} \;
+    find . -type f -exec chmod 644 {} \;
+}
+
+function pprint-json {
+    python3 -m json.tool --indent 2 $@
+}
+
+function pprint-xml {
+    cat $1 | xmllint --format -
+}
