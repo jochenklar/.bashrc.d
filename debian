@@ -1,1 +1,4 @@
 alias ap='aptitude'
+
+alias open='xdg-open'
+alias dig='dig +noedns'

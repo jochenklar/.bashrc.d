@@ -1,0 +1,7 @@
+function vncstart {
+    vncserver $@ -geometry 1800x1000 -localhost
+}
+
+function vnckill {
+    vncserver -kill $@
+}

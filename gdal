@@ -1,0 +1,13 @@
+function gdal {
+    unset -f gdal
+
+    if [ -z "$1" ]; then
+        echo "~~~ init gdal 3.4.1 ~~~"
+        export PATH=/store/maps/opt/gdal-3.4.1/bin/:$PATH
+        export LD_LIBRARY_PATH=/store/maps/opt/gdal-3.4.1/lib/:$LD_LIBRARY_PATH
+    else
+        echo "~~~ init gdal $1 ~~~"
+        export PATH=/store/maps/opt/gdal-$1/bin/:$PATH
+        export LD_LIBRARY_PATH=/store/maps/opt/gdal-$1/lib/:$LD_LIBRARY_PATH
+    fi
+}

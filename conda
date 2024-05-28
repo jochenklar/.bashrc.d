@@ -1,6 +1,12 @@
 function conda {
     echo "~~~ init conda ~~~"
     unset -f conda
+
+    # add conda to the path if it was installed in /opt
+    if [ -f "/opt/conda/miniconda3/bin/conda" ]; then
+        export PATH=/opt/conda/miniconda3/bin:$PATH
+    fi
+
     eval "$(conda shell.bash hook)"
 
     conda $@
