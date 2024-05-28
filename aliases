@@ -1,4 +1,4 @@
-alias ls='ls --color=auto'
+alias ls='ls --color'
 alias ll='ls -lah'
 
 alias e='emacs'
@@ -7,8 +7,8 @@ alias p='python3'
 alias t='tail -F'
 alias grep='grep --color'
 
-alias psg='ps auxw | grep --color'
-alias eng='env | grep --color'
-alias hsg='history | grep --color'
+alias psg='ps auxw | grep'
+alias eng='env | grep'
+alias hsg='history | grep'
 
 alias sd='sudo -i'
