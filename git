@@ -1,0 +1,23 @@
+alias gits='git status'
+alias gitc='git commit -am'
+alias gitl='git log'
+alias gitb='git branch'
+
+gitbu() {
+    git branch -u origin/`git branch --show-current`
+}
+gitcb() {
+    git checkout -b $1 origin/$1
+}
+gitpr() {
+    git fetch origin pull/$1/head:pr/$1
+    git checkout pr/$1
+}
+
+gityolo() {
+    git add . && git commit --amend --no-edit && git push -f origin tests
+}
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}

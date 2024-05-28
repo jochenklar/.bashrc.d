@@ -1,0 +1,9 @@
+function rbenv {
+    echo "~~~ init rbenv ~~~"
+    unset -f rbenv
+
+    export PATH=$HOME/.rbenv/bin:$PATH
+    eval "$(rbenv init -)"
+
+    rbenv $@
+}
