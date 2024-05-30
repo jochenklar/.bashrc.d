@@ -6,7 +6,7 @@ alias gitb='git branch'
 gitbu() {
     git branch -u origin/`git branch --show-current`
 }
-gitcb() {
+gitcu() {
     git checkout -b $1 origin/$1
 }
 gitpr() {

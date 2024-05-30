@@ -2,7 +2,3 @@ alias ap='aptitude'
 
 alias open='xdg-open'
 alias dig='dig +noedns'
-
-umlaut() {
-    setxkbmap -option grp:win_switch us,de
-}
