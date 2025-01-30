@@ -21,3 +21,14 @@ gityolo() {
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
+
+gitrepos() {
+    command=$1
+    shift
+    echo $command
+    for path in "$@"; do
+        echo "~~~ ${path} ~~~"
+        git -C $path $command
+    echo
+done
+}
