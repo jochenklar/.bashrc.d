@@ -2,3 +2,6 @@ alias ap='aptitude'
 
 alias open='xdg-open'
 alias dig='dig +noedns'
+
+alias term=xfce4-terminal
+alias xfce4-kill-desktop='pkill xfdesktop'

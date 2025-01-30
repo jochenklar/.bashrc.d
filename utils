@@ -10,3 +10,4 @@ function pprint-json {
 function pprint-xml {
     cat $1 | xmllint --format -
 }
+
