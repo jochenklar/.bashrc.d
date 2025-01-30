@@ -4,21 +4,16 @@ alias de='deactivate'
 alias jl='jupyter lab'
 
 function mkenv {
-    python3 -m venv env;
-    source env/bin/activate;
-    pip install --upgrade pip setuptools wheel;
+    if [ -z "$1" ]; then
+        uv venv env --seed --allow-existing
+    elif [ "$1" = "dist" ]; then
+        python3 -m venv env
+    else
+        uv venv env --seed --allow-existing --python $1
+    fi
 
-    case "$1" in
-        "pg")
-            pip install psycopg2-binary
-            ;;
-        "mysql")
-            pip install mysqlclient
-            ;;
-        "jl")
-            pip install jupyterlab pandas matplotlib
-            ;;
-    esac
+    source env/bin/activate
+    pip install --upgrade pip wheel setuptools
 }
 
 function serve {
