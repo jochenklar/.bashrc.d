@@ -4,4 +4,6 @@ alias open='xdg-open'
 alias dig='dig +noedns'
 
 alias term=xfce4-terminal
-alias xfce4-kill-desktop='pkill xfdesktop'
+
+alias xfce4-reload-desktop='xfdesktop --reload'
+alias xfce4-reload-desktop='pkill xfdesktop && xfdesktop &'

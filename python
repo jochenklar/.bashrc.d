@@ -4,16 +4,25 @@ alias de='deactivate'
 alias jl='jupyter lab'
 
 function mkenv {
-    if [ -z "$1" ]; then
-        uv venv env --seed --allow-existing
-    elif [ "$1" = "dist" ]; then
+    if [ "$1" = "dist" ]; then
         python3 -m venv env
+        source env/bin/activate
+        pip install --upgrade pip wheel setuptools
     else
-        uv venv env --seed --allow-existing --python $1
-    fi
+        if [ -z "$1" ]; then
+            uv venv env --allow-existing
+        else
+            uv venv env --allow-existing --python $1
+        fi
 
-    source env/bin/activate
-    pip install --upgrade pip wheel setuptools
+        source env/bin/activate
+        uv pip install --upgrade pip wheel setuptools
+    fi
+}
+
+function rmenv {
+    deactivate
+    rm -r env
 }
 
 function serve {

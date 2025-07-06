@@ -14,7 +14,7 @@ gitpr() {
     git checkout pr/$1
 }
 gityolo() {
-    git add . && git commit --amend --no-edit && git push -f origin tests
+    git add . && git commit --amend --no-edit && git push -f origin test
 }
 gitcompare() {
     diff --color <(git show $1) <(git show $2)
