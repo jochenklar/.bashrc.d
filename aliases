@@ -5,6 +5,7 @@ alias e='emacs'
 alias h='history'
 alias p='python3'
 alias t='tail -F'
+alias r='rich'
 alias grep='grep --color'
 
 alias psg='ps auxw | grep'
