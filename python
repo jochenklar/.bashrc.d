@@ -1,6 +1,8 @@
 alias ve='source env/bin/activate'
 alias de='deactivate'
 
+alias pip='uv pip'
+
 alias jl='jupyter lab'
 
 function mkenv {
