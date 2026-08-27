@@ -2,7 +2,7 @@ alias ls='ls --color'
 alias ll='ls -lah'
 
 alias e='emacs'
-alias h='history'
+alias h='history | fzf'
 alias p='python3'
 alias t='tail -F'
 alias r='rich'

@@ -5,6 +5,11 @@ alias pip='uv pip'
 
 alias jl='jupyter lab'
 
+alias yt='uvx yt-dlp'
+alias yt-en='yt --embed-subs --sub-langs en --convert-subs srt'
+alias yt-de='yt --embed-subs --sub-langs de --convert-subs srt'
+alias yt-subs='yt --list-subs'
+
 function mkenv {
     if [ "$1" = "dist" ]; then
         python3 -m venv env

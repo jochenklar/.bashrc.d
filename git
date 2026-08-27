@@ -25,12 +25,25 @@ parse_git_branch() {
 }
 
 gitrepos() {
-    command=$1
+    local command=$1
     shift
-    echo $command
     for path in "$@"; do
         echo "~~~ ${path} ~~~"
-        git -C $path $command
-    echo
-done
+        git -C "$path" $command
+        echo
+    done
+}
+
+gitdiff() {
+    local ref1="${1}"
+    local ref2="${2}"
+    local output="${3:-$HOME/Desktop/diff.txt}"
+
+    if [[ -n "$ref1" && -n "$ref2" ]]; then
+        git diff "${ref1}..${ref2}" > "${output}"
+    elif [[ -n "$ref1" ]]; then
+        git diff "${ref1}" > "${output}"
+    else
+        git diff > "${output}"
+    fi
 }

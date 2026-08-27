@@ -1,1 +1,5 @@
 alias caf='caffeinate -d'
+
+function clean-ds-store {
+    find . -type f -name .DS_Store -delete
+}

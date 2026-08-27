@@ -23,3 +23,11 @@ function what-is-my-ip {
 function wttr {
     curl wttr.in/Berlin
 }
+
+function generate-password {
+    pwgen -sA0B -1 6 3 | paste -sd- -
+}
+
+function dlna {
+    caffeinate -i minidlnad -R -d -f .config/minidlna/minidlna.conf
+}
