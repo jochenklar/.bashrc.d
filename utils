@@ -31,3 +31,12 @@ function generate-password {
 function dlna {
     caffeinate -i minidlnad -R -d -f .config/minidlna/minidlna.conf
 }
+
+function osm {
+    telnet mapscii.me
+}
+
+function serve {
+    nvm use stable
+    npx http-server -p 4000 --cors
+}
