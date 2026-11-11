@@ -36,7 +36,3 @@ function serve {
     nvm use stable
     npx http-server -p 4000 --cors
 }
-
-function apa {
-    curl -LH 'Accept: text/x-bibliography; style=apa; locale=en-US' $1
-}
