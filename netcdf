@@ -1,0 +1,4 @@
+alias nch='ncdump -h'
+alias nchs='ncdump -hs'
+
+alias cdi='cdo sinfon'

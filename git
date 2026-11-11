@@ -48,3 +48,8 @@ gitdiff() {
         git diff > "${output}"
     fi
 }
+
+alias ghtoken='export GITHUB_TOKEN=$(gh auth token)'
+ghmd() {
+  gh markdown-preview "${1:-README.md}"
+}
