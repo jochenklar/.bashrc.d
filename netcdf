@@ -1,4 +1,12 @@
-alias nch='ncdump -h'
+ncdump() {
+    if [[ -t 1 ]] && command -v bat >/dev/null; then
+        command ncdump "$@" | bat -p -l c
+    else
+        command ncdump "$@"
+    fi
+}
+
+alias nch='ncdump -h '
 alias nchs='ncdump -hs'
 
 alias cdi='cdo sinfon'
